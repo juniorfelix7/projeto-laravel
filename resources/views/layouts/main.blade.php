@@ -15,6 +15,8 @@
         
         <!--Script-->
         <script src="/js/scripts.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.js"></script>
         
        
 
@@ -40,7 +42,7 @@
                                 <a href="/" class="nav-link">Anúncios</a> 
                             </li>
                             <li class="nav-item">
-                                <a href="/services/create" class="nav-link">Criar Anúncio</a> 
+                                <a href="/anuncios/create" class="nav-link">Criar Anúncio</a> 
                             </li>
                             <li class="nav-item">
                                 <a href="/" class="nav-link">Entrar</a> 
@@ -53,9 +55,16 @@
                 </div>
             </nav>
         </header>
-
-        @yield('content')
-        
+        <main>
+            <div class="container-fluid">
+                <div class="row">
+                    @if(session('success'))
+                        <p class ="msg">{{session('success')}}
+                    @endif
+                    @yield('content')
+                </div>
+            </div>
+        </main>        
         <footer>
             <p>Nivel3 Service &copy; 2025</p>
         </footer>

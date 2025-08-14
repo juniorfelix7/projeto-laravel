@@ -18,12 +18,13 @@
     <div id="cards-container" class="row">
        @foreach($anuncios as $anuncio)
         <div class="card col-md-3">
-            <img src="/img/anuncio3.jpg" alt="{{ $anuncio -> title }}">
+            <img src="/img/anuncios/{{$anuncio->image}}" alt="{{ $anuncio -> title }}">
             <div class="card-body">
                 <p class="card-date"> 10/09/2025 </p>
                 <h5 class="card-title">{{ $anuncio->title}}</h5>
-                <p class="card-city"> Cidade </p>
-                <a href="#" class="btn btn-primary"> Saber mais</a>
+                <p class="card-city"> Cidade: {{$anuncio->city}} </p>
+                <p class="card-city"> Valor: {{$anuncio->price}} </p>
+                <a href="/anuncios/{{$anuncio->id}}" class="btn btn-primary"> Saber mais</a>
             </div>
         </div>
        
